@@ -18,8 +18,10 @@ function cardsDirective(){
     }
 }
 
-function cardsContrl(){
-
+function cardsContrl($scope, $element, $attrs){
+    function change(){
+        $scope.data = 'change the content once';
+    }
 }
 
 function cardsService(){
