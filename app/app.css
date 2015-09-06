@@ -1,4 +1,23 @@
 /* app css stylesheet */
+/* common style header, footer and section */
+header{
+  height: 30px;
+  background: #000;
+  width: 100%;
+  display: flex;
+}
+footer{
+  height: 20px;
+  background: #000;
+  width: 100%;
+  display: flex;
+}
+section{
+  display: flex;
+}
+
+
+/* common style header and footer */
 
 .menu {
   list-style: none;
@@ -34,5 +53,5 @@
   float:left;
 }
 .right-content{
-  float: right;
+  float: left;
 }
