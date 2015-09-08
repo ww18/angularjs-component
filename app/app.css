@@ -1,19 +1,41 @@
 /* app css stylesheet */
 /* common style header, footer and section */
-header{
-  height: 30px;
-  background: #000;
-  width: 100%;
+html,body{
+  height: 100%;
+}
+body{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+
+  -webkit-flex-flow: row wrap;
+  flex-flow: column nowrap;
+}
+header{
+  height: 50px;
+  background: #000;
+  color: #fff;
+  line-height: 50px;
+  padding-left: 20px;
 }
 footer{
   height: 20px;
   background: #000;
-  width: 100%;
-  display: flex;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  line-height: 20px;
 }
+/* the safari has some problem, but the chrome and firefox is good
+ make the layout fit the whole browser using height: inherit
+*/
 section{
-  display: flex;
+  min-height: auto;
+  height: inherit;
+  overflow: auto;
+  padding: 10px;
 }
 
 
