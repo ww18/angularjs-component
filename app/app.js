@@ -10,8 +10,8 @@ angular.module('myApp', [
 config(['$routeProvider', function($routeProvider) {
       $routeProvider
           .when('/market', {
-            templateUrl: 'market/market.html',
-            controller: 'market'
+            templateUrl: 'Market/Market.html',
+            controller: 'Market'
           })
           .when('/myProfile', {
             templateUrl: 'my-profile/my-profile.html',

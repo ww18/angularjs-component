@@ -3,8 +3,8 @@
  */
 'use strict';
 
-angular.module('myApp.myProfile', [])
-    .controller('myProfile', ['$scope',function($scope) {
+angular.module('myApp.Market', [])
+    .controller('Market', ['$scope',function($scope) {
         $scope.profile = {
             "name": "wenwen",
             "myBlogNum": 30
