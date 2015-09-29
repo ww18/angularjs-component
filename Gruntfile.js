@@ -10,16 +10,24 @@ module.exports = function(grunt) {
                     'app/css/style.css' : '**/*.scss'
                 }
             }
-
+        },
+        compass:{
+            app:{
+                options:{
+                    sassDir: "app",
+                    cssDir: "app/css"
+                }
+            }
         },
         watch: {
             css: {
                 files: '**/*.scss',
-                tasks: ['sass']
+                tasks: ['compass']
             }
         }
     });
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.registerTask('default',['watch']);
+    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.registerTask('default',['sass']);
 }
