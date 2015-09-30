@@ -5,7 +5,8 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.Market',
   'myApp.myProfile',
-  'myApp.version'
+  'myApp.version',
+  'service.data'
 ]).
 config(['$routeProvider', function($routeProvider) {
       $routeProvider

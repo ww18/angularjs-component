@@ -17,13 +17,15 @@
 </head>
 <body>
   <header>
-    Market
+    <span>Market</span>
+    <nav>
+      <ul class="menu">
+        <li><a href="#/myProfile" ng-class="{'selectedMenu': $root.selectedMenu=='myProfile'}">my profile</a></li>
+        <li><a href="#/market" ng-class="{'selectedMenu': $root.selectedMenu=='market'}">Market</a></li>
+      </ul>
+    </nav>
   </header>
   <section>
-    <ul class="menu">
-      <li><a href="#/myProfile">my profile</a></li>
-      <li><a href="#/market">Market</a></li>
-    </ul>
 
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -42,7 +44,8 @@
   <script src="bower_components/jQuery/dist/jquery.js"></script>
   <script src="components/core/registry.js"></script>
   <script src="app.js"></script>
-  <script src="market/market.js"></script>
+  <script src="Market/Market.js"></script>
+  <script src="Market/mock-service.js"></script>
   <script src="my-profile/my-profile.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>

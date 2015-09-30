@@ -20,6 +20,10 @@ header{
   line-height: 50px;
   padding-left: 20px;
 }
+nav{
+  display: inline-block;
+  margin-left: 100px;
+}
 footer{
   height: 20px;
   background: #000;
@@ -43,26 +47,27 @@ section{
 
 .menu {
   list-style: none;
-  border-bottom: 0.1em solid black;
   margin-bottom: 2em;
   padding: 0 0 0.5em;
 }
 
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
 
 .menu > li {
-  display: inline;
+  display: inline-block;
+  padding: 0px 10px;
+}
+.menu > li a{
+  color: #fff;
+
+
+}
+.menu > li a.selectedMenu{
+  color: #f0ad4e;
 }
 
 .menu > li:before {
   content: "|";
-  padding-right: 0.3em;
+  padding-right: 20px;
 }
 
 .menu > li:nth-child(1):before {
