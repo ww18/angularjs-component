@@ -1,12 +1,12 @@
 <div class="itemlist-for-qxofifashion J_Module">
-    <div class="search"><input type="text" placeholder="search"></div>
+    <div class="search-div"><input type="text" placeholder="search" ng-model="query"></div>
     <div class="module-wrap">
         <ul class="list J_dynamic">
-            <li ng-repeat="item in items" data-start="{{item[item_content_start_time]}}" data-end="{{item.deliveryDate}}" data-store="{{item.item_num}}" class="">
+            <li ng-repeat="item in items | filter:query" data-start="{{item[item_content_start_time]}}" data-end="{{item.deliveryDate}}" data-store="{{item.item_num}}" class="">
                 <div class="inner">
                     <div class="pic-wrap">
                         <div class="ipic img-vertical">
-                            <a ng-href="item.item_url" class="img-wrap" title="{{item.item_title}}" target="_blank" data-spm-anchor-id="a21cv.7771689.19758.187">
+                            <a href="{{item.item_url}}" class="img-wrap" title="{{item.item_title}}" target="_blank" data-spm-anchor-id="a21cv.7771689.19758.187">
                                 <img width="230" alt="" src="{{item.item_pic}}">
                             </a>
                         </div>

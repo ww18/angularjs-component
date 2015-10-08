@@ -100,10 +100,24 @@
   margin: 0;
   padding: 0; }
 
+*:focus {
+  outline: none; }
+
 .act-banner-pc .container img {
   width: 100%;
   display: block; }
 
+.itemlist-for-qxofifashion .search-div {
+  padding: 10px; }
+  .itemlist-for-qxofifashion .search-div input {
+    border-radius: 6px;
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px #ccc solid;
+    background: #fff;
+    width: 300px;
+    padding-left: 10px; }
 .itemlist-for-qxofifashion .dataText {
   display: none; }
 .itemlist-for-qxofifashion .module-wrap {

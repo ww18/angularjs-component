@@ -6,7 +6,8 @@
 angular.module('myApp.Market', [])
     .controller('Market', ['$scope', '$rootScope', 'marketDataService',function($scope, $rootScope, marketDataService) {
         //get data across the marketDataService
-        marketDataService.getItemData()
+        var pageNum = 1;
+        marketDataService.getItemData(pageNum++)
             .then(function(res){
                 $scope.items  = res;
             });

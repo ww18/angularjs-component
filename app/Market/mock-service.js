@@ -4,10 +4,10 @@
 angular.module("service.data",[])
     .factory('marketDataService',["$http",'$q',function($http, $q){
         var factory={};
-        factory.getItemData = function(){
+        factory.getItemData = function(pageNum){
             var defer = $q.defer();
-
-            $http.get('Market/data.json').success(function (res) {
+            var url = 'Market/data'+ pageNum + '.json';
+            $http.get(url).success(function (res) {
                 console.log(res);
                 defer.resolve(res);
             });
