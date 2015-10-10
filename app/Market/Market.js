@@ -12,5 +12,8 @@ angular.module('myApp.Market', [])
                 $scope.items  = res;
             });
         $rootScope.selectedMenu = 'market';
+        window.onscroll = function(){
+            alert(1);
+        }
     }]);
 
