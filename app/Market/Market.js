@@ -4,10 +4,10 @@
 'use strict';
 
 angular.module('myApp.Market', [])
-    .controller('Market', ['$scope', '$rootScope', 'marketDataService',function($scope, $rootScope, marketDataService) {
+    .controller('Market', ['$scope', '$rootScope','$q', 'marketDataService',function($scope, $rootScope, $q, marketDataService) {
         //get data across the marketDataService
         $scope.items = [];
-        var pageNum = 1;
+        var pageNum = 1,lastPage = false;
         loadMore();
         $rootScope.selectedMenu = 'market';
         //$scope.$watch(function () {
@@ -18,18 +18,25 @@ angular.module('myApp.Market', [])
         //});
         $('section').bind("scroll", function(e) {
             //console.log(e.target.scrollTop);
-            if(checkIfReachButtom(e)){
-                loadMore();
+            var defer = $q.defer();
+            if(checkIfReachButtom(e) && !lastPage){
+                loadMore(defer);
             }
             //checkIfReachButtom(e);
             //$scope.visible = false;
         });
 
         function loadMore(){
-            marketDataService.getItemData(pageNum++)
+            marketDataService.getItemData(pageNum)
                 .then(function(res){
-                    for(var i in res){
-                        $scope.items.push(res[i]);
+                    if(!res.pageEnd){
+                        for(var i in res.items){
+                            $scope.items.push(res.items[i]);
+                        }
+                        pageNum++;
+                    }else{
+                        lastPage = true;
+                        return;
                     }
                 });
         }

@@ -7,8 +7,7 @@ angular.module("service.data",[])
         factory.getItemData = function(pageNum){
             var defer = $q.defer();
             var url = 'Market/data'+ pageNum + '.json';
-            $http.get(url).success(function (res) {
-                console.log(res);
+            $http.get(url).success(function(res){
                 defer.resolve(res);
             });
             return defer.promise;
