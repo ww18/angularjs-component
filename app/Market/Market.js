@@ -16,12 +16,18 @@ angular.module('myApp.Market', [])
         //    console.log(scrollY);
         //    /* logic */
         //});
+        var defer = $q.defer();
         $('section').bind("scroll", function(e) {
             //console.log(e.target.scrollTop);
-            var defer = $q.defer();
-            if(checkIfReachButtom(e) && !lastPage){
-                loadMore(defer);
+            if(defer.resolve||(pageNum==1)){
+                if(checkIfReachButtom(e) && !lastPage){
+                    defer = $q.defer();
+                    loadMore(defer);
+                }
+            }else{
+                return;
             }
+
             //checkIfReachButtom(e);
             //$scope.visible = false;
         });
@@ -38,6 +44,8 @@ angular.module('myApp.Market', [])
                         lastPage = true;
                         return;
                     }
+                    defer.resolve(res);
+                    return defer.promise;
                 });
         }
 

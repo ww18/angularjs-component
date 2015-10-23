@@ -11,7 +11,7 @@ angular.module("service.data",[])
                 defer.resolve(res);
             });
             return defer.promise;
-        }
+        };
 
         return factory;
-    }])
+    }]);

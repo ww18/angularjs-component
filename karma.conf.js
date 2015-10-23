@@ -11,11 +11,14 @@ module.exports = function(config){
       'app/view*/**/*.js'
     ],
 
-    autoWatch : true,
+    autoWatch : false,
+    singleRun: true,
 
     frameworks: ['jasmine'],
 
     browsers : ['Chrome'],
+
+    reporters: ["junit"],
 
     plugins : [
             'karma-chrome-launcher',
@@ -25,7 +28,7 @@ module.exports = function(config){
             ],
 
     junitReporter : {
-      outputFile: 'test_out/unit.xml',
+      outputFile: 'unit.xml',
       suite: 'unit'
     }
 

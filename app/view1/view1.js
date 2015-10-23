@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.detailPage', [])
-.controller('detailPage', [function() {
+angular.module('myApp.view1', [])
+.controller('View1Ctrl', [function() {
 
 }]);
